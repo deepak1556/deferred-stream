@@ -1,0 +1,23 @@
+{
+  "author": "Robo <hop2deep@gmail.com>",
+  "name": "deferred-stream",
+  "description": "deferred object for streams",
+  "version": "0.1.0",
+  "homepage": "https://github.com/deepak1556/deferred-stream",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/deepak1556/deferred-stream.git"
+  },
+  "engines": {
+    "node": ">=0.6"
+  },
+  "dependencies": {
+    "event-stream": "~2.0.0"
+  },
+  "devDependencies": {
+    "socket.io": "0.9",
+    "express": "2.5",
+    "browserify": "~1.13",
+  },
+  "optionalDependencies": {}
+}
