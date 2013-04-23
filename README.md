@@ -1,16 +1,16 @@
-deferred-stream
+# deferred-stream
 ===============
 
 $.Deferred implementation based on streams. 
 
   * use streams to enhance combined promises.
 
-Example using Deferred-stream
-=============================
-Server
+# Example using Deferred-stream
+===============================
+## Server
 ---------
-
-var def = require('deferred-stream')
+``` js
+var def = require('deferred-stream');
 
 var arr = [1,2,3,4];
 var processed = [];
@@ -23,13 +23,13 @@ io.sockets.on('connection', function(sock){
    var b = def(sock);
   
    var something = new Stream();
-   bs.on('connection', function(stream){
+   b.on('connection', function(stream){
      if(stream.name == "something")
        w.pipe(processed);
-   }) 
+   }); 
 
    //write streams for other processes if needed 
-})
+});
 
 function processItem(id,data) {
   var dfd = def(id);
@@ -40,10 +40,12 @@ function processItem(id,data) {
  
   return dfd.promise();
 }
+```
        
-Client
---------
+## Client
+---------
 
+``` js
 var _def  = require(deferred-stream);
 
 var a = _def("something",read);
@@ -57,9 +59,9 @@ a.on('readable', function(stream){
     },function(err){
        console.log(err);
     })
-})
+});
 
 a.on('end', function(e){
     //handle end
-})
- 
+});
+``` 
